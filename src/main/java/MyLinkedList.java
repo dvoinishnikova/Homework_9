@@ -3,17 +3,17 @@ public class MyLinkedList<E> {
     private Node tail = null;
     private int size = 0;
     private class Node {
-        private Object value;
+        private E value;
         private Node next;
         private Node prev;
 
-        public Node(Object value) {
+        public Node(E value) {
             this.value = value;
             prev = null;
             next = null;
         }
     }
-    public void add(Object value) {
+    public void add(E value) {
         Node newNode = new Node(value);
         if (head == null) {
             head = newNode;
@@ -50,7 +50,7 @@ public class MyLinkedList<E> {
     public int size() {
         return size;
     }
-    public Object get(int index) {
+    public E get(int index) {
         Node current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;

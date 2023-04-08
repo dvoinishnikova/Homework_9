@@ -1,9 +1,9 @@
-public class MyQueue {
+public class MyQueue<E>{
     private Object[] elements = new Object[10];
     private int head = 0;
     private int tail = 0;
     private int size = 0;
-    public void add(Object value) {
+    public void add(E value) {
         tail = (tail + 1) % elements.length;
         elements[tail] = value;
         size++;

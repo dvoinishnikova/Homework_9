@@ -1,12 +1,15 @@
-public class MyArrayList {
+public class MyArrayList<E> {
     private Object[] myArray = new Object[10];
     private int size = 0;
-    public void add(Object value) {
+    public void add(E value) {
         myArray[size] = value;
         size++;
     }
     public void remove(int index) {
-        myArray[index] = null;
+        for (int i = index; i < size - 1; i++)
+            myArray[i] = myArray[i + 1];
+        myArray[size - 1] = null;
+        size--;
     }
     public void clear() {
         for (int i = 0; i < size; i++)

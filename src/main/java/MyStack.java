@@ -1,7 +1,7 @@
-public class MyStack {
+public class MyStack<E> {
     private Object[] stack = new Object[10];
     private int top = -1;
-    public void push(Object value) {
+    public void push(E value) {
         top++;
         stack[top] = value;
     }
