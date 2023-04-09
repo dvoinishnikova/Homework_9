@@ -1,5 +1,5 @@
 public class MyStack<E> {
-    private Object[] stack = new Object[10];
+    private E[] stack = (E[]) new Object[10];
     private int top = -1;
     public void push(E value) {
         top++;
@@ -16,11 +16,11 @@ public class MyStack<E> {
     public int size() {
         return top + 1;
     }
-    public Object peek() {
+    public E peek() {
         return stack[top];
     }
-    public Object pop() {
-        Object result = stack[top];
+    public E pop() {
+        E result = stack[top];
         stack[top] = null;
         top--;
         return result;

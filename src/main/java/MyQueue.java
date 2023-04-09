@@ -1,5 +1,5 @@
 public class MyQueue<E>{
-    private Object[] elements = new Object[10];
+    private E[] elements = (E[]) new Object[10];
     private int head = 0;
     private int tail = 0;
     private int size = 0;
@@ -9,7 +9,7 @@ public class MyQueue<E>{
         size++;
     }
     public void clear() {
-        elements = new Object[10];
+        elements = (E[]) new Object[10];
         size = 0;
         head = 0;
         tail = 0;
@@ -18,12 +18,12 @@ public class MyQueue<E>{
         return size;
     }
 
-    public Object peek() {
+    public E peek() {
         return elements[head];
     }
 
-    public Object poll() {
-        Object value = elements[head];
+    public E poll() {
+        E value = elements[head];
         elements[head] = null;
         head = (head + 1) % elements.length;
         size--;

@@ -1,5 +1,5 @@
 public class MyArrayList<E> {
-    private Object[] myArray = new Object[10];
+    private E[] myArray = (E[]) new Object[10];
     private int size = 0;
     public void add(E value) {
         myArray[size] = value;
@@ -19,7 +19,7 @@ public class MyArrayList<E> {
     public int size() {
         return size;
     }
-    public Object get(int index) {
+    public E get(int index) {
         return myArray[index];
     }
 }
